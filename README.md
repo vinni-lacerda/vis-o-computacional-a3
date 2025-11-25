@@ -23,7 +23,7 @@ Estrutura de pastas
 ├── Detector.py        ← módulo de detecção de objetos
 ├── main.py            ← script principal para execução
 └── README.md          ← este arquivo
-
+`
 Requisitos
 
 Python 3.x
