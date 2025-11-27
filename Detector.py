@@ -63,10 +63,12 @@ class Detector:
                     displayText = "{}:{:.2f}".format(classLabel, classConfidence)
                     
                     x,y,w,h = bbox
+                    area = w*h
+                    sizeText = f"{w}x{h}px Area:{area}px"
                     
                     cv2.rectangle(image, (x,y), (x+w, y+h), color=classColor, thickness=1)
                     cv2.putText(image, displayText, (x+10, y), cv2.FONT_HERSHEY_PLAIN, 1, classColor, 2,1,True)
-                    
+                    cv2.putText(image, sizeText, (x+10, y+15), cv2.FONT_HERSHEY_PLAIN, 1, classColor, 2)
                     lineWidth = min(int(w * 0.3), int(h*0.3))
                     
                     cv2.line(image, (x,y), (x+lineWidth,y), classColor, thickness=5)
